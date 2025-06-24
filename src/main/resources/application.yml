@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: aidiph-payroll-service
+
+  datasource:
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/payroll
+    username: postgres
+    password: root
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 4
+
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+logging:
+  level:
+    org.springframework.data.redis: DEBUG
+
+server:
+  port: 8109
+
+#endpoint:
+#  service:
+#    aidiph-spotlight-service: http://13.233.56.232:8106/api/v1/spotlight-service
+#
+
